@@ -13,56 +13,88 @@ function display(node) {
       return node.name;
     case "Literal":
       return node.raw;
+    case "SpreadElement":
+      return "...";
+    case "ArrayExpression":
+      return "[]";
     case "TemplateElement":
       return node.value.raw;
     case "BinaryExpression":
     case "LogicalExpression":
     case "UnaryExpression":
       return node.operator;
-    case "TemplateLiteral":
-    case "SwitchCase":
-    case "SwitchStatement":
-    case "ReturnStatement":
-    case "ObjectExpression":
-    case "CallExpression":
-    case "MemberExpression":
-    case "Program":
+    case "AssignmentExpression":
     case "VariableDeclarator":
     case "Property":
-    case "FunctionDeclaration":
+      return "=";
+    case "CallExpression":
+      return "()";
+    case "MemberExpression":
+      return ".";
     case "BlockStatement":
-    case "ExpressionStatement":
+      return "{ ... }";
     case "IfStatement":
+      return "if";
+    case "FunctionDeclaration":
+      return "function";
+    case "ExpressionStatement":
+      return ";";
     case "ArrowFunctionExpression":
-      return null;
+      return "=>";
+    case "ReturnStatement":
+      return "return";
+    case "SwitchCase":
+      return "case";
+    case "SwitchStatement":
+      return "switch";
+    case "Program":
+      return "program";
+    case "TemplateLiteral":
+      return "TODO: TemplateLiteral";
+    case "ObjectExpression":
+      return "{ : }";
     default:
       console.log(node);
       return node.type;
   }
 }
 
-function walk(node, depth) {
+function walk(node, previous) {
   if (node.type) {
     const output = display(node);
+    let indent = "";
 
-    const indent = "→ ".repeat(depth);
-    if (output === null) {
-      console.log(`${indent}${node.type}`);
+    if (previous.length) {
+      indent = previous.reduce((acc, cur) => acc + cur, "") + "── ";
     } else {
-      console.log(`${indent}${node.type}: ${output}`);
+      indent = "   ";
     }
+
+    console.log(`${indent}${output}`);
   }
 
-  Object.values(node).forEach((child) => {
+  if (previous[previous.length - 1] === `   └`) {
+    previous[previous.length - 1] = "    ";
+  }
+  if (previous[previous.length - 1] === `   ├`) {
+    previous[previous.length - 1] = "   │";
+  }
+
+  Object.values(node).forEach((child, index, arr) => {
     if (typeof child === "object" && child !== null) {
       if (Array.isArray(child)) {
         // Don't increment depth for arrays.
-        walk(child, depth);
+        walk(child, [...previous]);
       } else {
-        walk(child, depth + 1);
+        if (index === arr.length - 1) {
+          // last
+          walk(child, [...previous, `   └`]);
+        } else {
+          walk(child, [...previous, "   ├"]);
+        }
       }
     }
   });
 }
 
-walk(ast, 0);
+walk(ast, []);
