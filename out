@@ -1,0 +1,228 @@
+Program
+→ VariableDeclaration: const
+→ → VariableDeclarator
+→ → → Identifier: fs
+→ → → CallExpression
+→ → → → Identifier: require
+→ → → → Literal: "fs"
+→ VariableDeclaration: const
+→ → VariableDeclarator
+→ → → Identifier: espree
+→ → → CallExpression
+→ → → → Identifier: require
+→ → → → Literal: "espree"
+→ VariableDeclaration: const
+→ → VariableDeclarator
+→ → → Identifier: code
+→ → → CallExpression
+→ → → → MemberExpression
+→ → → → → Identifier: fs
+→ → → → → Identifier: readFileSync
+→ → → → Identifier: __filename
+→ → → → Literal: "utf8"
+→ VariableDeclaration: const
+→ → VariableDeclarator
+→ → → Identifier: ast
+→ → → CallExpression
+→ → → → MemberExpression
+→ → → → → Identifier: espree
+→ → → → → Identifier: parse
+→ → → → Identifier: code
+→ → → → ObjectExpression
+→ → → → → Property
+→ → → → → → Identifier: ecmaVersion
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: espree
+→ → → → → → → Identifier: latestEcmaVersion
+→ FunctionDeclaration
+→ → Identifier: display
+→ → Identifier: node
+→ → BlockStatement
+→ → → SwitchStatement
+→ → → → MemberExpression
+→ → → → → Identifier: node
+→ → → → → Identifier: type
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: node
+→ → → → → → → Identifier: kind
+→ → → → → Literal: "VariableDeclaration"
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: node
+→ → → → → → → Identifier: name
+→ → → → → Literal: "Identifier"
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: node
+→ → → → → → → Identifier: raw
+→ → → → → Literal: "Literal"
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → MemberExpression
+→ → → → → → → → Identifier: node
+→ → → → → → → → Identifier: value
+→ → → → → → → Identifier: raw
+→ → → → → Literal: "TemplateElement"
+→ → → → SwitchCase
+→ → → → → Literal: "BinaryExpression"
+→ → → → SwitchCase
+→ → → → → Literal: "LogicalExpression"
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: node
+→ → → → → → → Identifier: operator
+→ → → → → Literal: "UnaryExpression"
+→ → → → SwitchCase
+→ → → → → Literal: "TemplateLiteral"
+→ → → → SwitchCase
+→ → → → → Literal: "SwitchCase"
+→ → → → SwitchCase
+→ → → → → Literal: "SwitchStatement"
+→ → → → SwitchCase
+→ → → → → Literal: "ReturnStatement"
+→ → → → SwitchCase
+→ → → → → Literal: "ObjectExpression"
+→ → → → SwitchCase
+→ → → → → Literal: "CallExpression"
+→ → → → SwitchCase
+→ → → → → Literal: "MemberExpression"
+→ → → → SwitchCase
+→ → → → → Literal: "Program"
+→ → → → SwitchCase
+→ → → → → Literal: "VariableDeclarator"
+→ → → → SwitchCase
+→ → → → → Literal: "Property"
+→ → → → SwitchCase
+→ → → → → Literal: "FunctionDeclaration"
+→ → → → SwitchCase
+→ → → → → Literal: "BlockStatement"
+→ → → → SwitchCase
+→ → → → → Literal: "ExpressionStatement"
+→ → → → SwitchCase
+→ → → → → Literal: "IfStatement"
+→ → → → SwitchCase
+→ → → → → ReturnStatement
+→ → → → → → Literal: null
+→ → → → → Literal: "ArrowFunctionExpression"
+→ → → → SwitchCase
+→ → → → → ExpressionStatement
+→ → → → → → CallExpression
+→ → → → → → → MemberExpression
+→ → → → → → → → Identifier: console
+→ → → → → → → → Identifier: log
+→ → → → → → → Identifier: node
+→ → → → → ReturnStatement
+→ → → → → → MemberExpression
+→ → → → → → → Identifier: node
+→ → → → → → → Identifier: type
+→ FunctionDeclaration
+→ → Identifier: walk
+→ → Identifier: node
+→ → Identifier: depth
+→ → BlockStatement
+→ → → IfStatement
+→ → → → MemberExpression
+→ → → → → Identifier: node
+→ → → → → Identifier: type
+→ → → → BlockStatement
+→ → → → → VariableDeclaration: const
+→ → → → → → VariableDeclarator
+→ → → → → → → Identifier: output
+→ → → → → → → CallExpression
+→ → → → → → → → Identifier: display
+→ → → → → → → → Identifier: node
+→ → → → → VariableDeclaration: const
+→ → → → → → VariableDeclarator
+→ → → → → → → Identifier: indent
+→ → → → → → → CallExpression
+→ → → → → → → → MemberExpression
+→ → → → → → → → → Literal: "→ "
+→ → → → → → → → → Identifier: repeat
+→ → → → → → → → Identifier: depth
+→ → → → → IfStatement
+→ → → → → → BinaryExpression: ===
+→ → → → → → → Identifier: output
+→ → → → → → → Literal: null
+→ → → → → → BlockStatement
+→ → → → → → → ExpressionStatement
+→ → → → → → → → CallExpression
+→ → → → → → → → → MemberExpression
+→ → → → → → → → → → Identifier: console
+→ → → → → → → → → → Identifier: log
+→ → → → → → → → → TemplateLiteral
+→ → → → → → → → → → Identifier: indent
+→ → → → → → → → → → MemberExpression
+→ → → → → → → → → → → Identifier: node
+→ → → → → → → → → → → Identifier: type
+→ → → → → → → → → → TemplateElement: 
+→ → → → → → → → → → TemplateElement: 
+→ → → → → → → → → → TemplateElement: 
+→ → → → → → BlockStatement
+→ → → → → → → ExpressionStatement
+→ → → → → → → → CallExpression
+→ → → → → → → → → MemberExpression
+→ → → → → → → → → → Identifier: console
+→ → → → → → → → → → Identifier: log
+→ → → → → → → → → TemplateLiteral
+→ → → → → → → → → → Identifier: indent
+→ → → → → → → → → → MemberExpression
+→ → → → → → → → → → → Identifier: node
+→ → → → → → → → → → → Identifier: type
+→ → → → → → → → → → Identifier: output
+→ → → → → → → → → → TemplateElement: 
+→ → → → → → → → → → TemplateElement: 
+→ → → → → → → → → → TemplateElement: : 
+→ → → → → → → → → → TemplateElement: 
+→ → → ExpressionStatement
+→ → → → CallExpression
+→ → → → → MemberExpression
+→ → → → → → CallExpression
+→ → → → → → → MemberExpression
+→ → → → → → → → Identifier: Object
+→ → → → → → → → Identifier: values
+→ → → → → → → Identifier: node
+→ → → → → → Identifier: forEach
+→ → → → → ArrowFunctionExpression
+→ → → → → → Identifier: child
+→ → → → → → BlockStatement
+→ → → → → → → IfStatement
+→ → → → → → → → LogicalExpression: &&
+→ → → → → → → → → BinaryExpression: ===
+→ → → → → → → → → → UnaryExpression: typeof
+→ → → → → → → → → → → Identifier: child
+→ → → → → → → → → → Literal: "object"
+→ → → → → → → → → BinaryExpression: !==
+→ → → → → → → → → → Identifier: child
+→ → → → → → → → → → Literal: null
+→ → → → → → → → BlockStatement
+→ → → → → → → → → IfStatement
+→ → → → → → → → → → CallExpression
+→ → → → → → → → → → → MemberExpression
+→ → → → → → → → → → → → Identifier: Array
+→ → → → → → → → → → → → Identifier: isArray
+→ → → → → → → → → → → Identifier: child
+→ → → → → → → → → → BlockStatement
+→ → → → → → → → → → → ExpressionStatement
+→ → → → → → → → → → → → CallExpression
+→ → → → → → → → → → → → → Identifier: walk
+→ → → → → → → → → → → → → Identifier: child
+→ → → → → → → → → → → → → Identifier: depth
+→ → → → → → → → → → BlockStatement
+→ → → → → → → → → → → ExpressionStatement
+→ → → → → → → → → → → → CallExpression
+→ → → → → → → → → → → → → Identifier: walk
+→ → → → → → → → → → → → → Identifier: child
+→ → → → → → → → → → → → → BinaryExpression: +
+→ → → → → → → → → → → → → → Identifier: depth
+→ → → → → → → → → → → → → → Literal: 1
+→ ExpressionStatement
+→ → CallExpression
+→ → → Identifier: walk
+→ → → Identifier: ast
+→ → → Literal: 0
