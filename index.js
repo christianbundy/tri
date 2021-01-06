@@ -75,8 +75,9 @@ function draw(node, previous = []) {
   }
 }
 
-const cursor = [0];
+let cursor = [0];
 draw(lines);
+console.log({ cursor });
 
 const readline = require("readline");
 
@@ -91,7 +92,9 @@ process.stdin.on("keypress", (str, key) => {
       process.exit(0);
       break;
     case "o":
-      cursor.pop();
+      if (cursor.length >= 2) {
+        cursor.pop();
+      }
       draw(lines);
       break;
     case "i":
@@ -102,7 +105,9 @@ process.stdin.on("keypress", (str, key) => {
     case "left":
     case "h":
     case "k":
-      cursor[cursor.length - 1] -= 1;
+      if (cursor[cursor.length - 1] >= 1) {
+        cursor[cursor.length - 1] -= 1;
+      }
       draw(lines);
       break;
     case "down":
@@ -114,11 +119,12 @@ process.stdin.on("keypress", (str, key) => {
       break;
 
     case "r":
-      cursor = [0]
+      cursor = [0];
       draw(lines);
       break;
 
     default:
-      console.log(key);
+    //      console.log(key);
   }
+  console.log({ cursor });
 });
