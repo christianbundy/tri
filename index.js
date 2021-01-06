@@ -64,7 +64,7 @@ function draw(node, previous = []) {
       draw(node.value, previous);
       break;
 
-    case "character":
+    case "character": {
       const hasCursor = cursor.every((x, i) => x === previous[i]);
       if (hasCursor) {
         process.stdout.write(chalk.bgGreen(node.value));
@@ -72,6 +72,7 @@ function draw(node, previous = []) {
         process.stdout.write(node.value);
       }
       break;
+    }
   }
 }
 
