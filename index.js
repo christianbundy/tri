@@ -3,7 +3,7 @@ const chalk = require("chalk");
 const path = require("path");
 
 const data = fs
-  .readFileSync(path.join(__dirname, "package.json"))
+  .readFileSync(path.join(__dirname, "README.md"))
   .toString()
   .split("");
 
@@ -20,8 +20,6 @@ function parseSpans(x) {
 
     const lastSpan = acc[acc.length - 1].value;
     const lastChar = lastSpan[lastSpan.length - 1];
-
-    console.log({ cur, lastChar });
 
     if (isSpan(cur.value, lastChar.value)) {
       acc[acc.length - 1].value.push(cur);
@@ -112,6 +110,11 @@ process.stdin.on("keypress", (str, key) => {
     case "l":
     case "j":
       cursor[cursor.length - 1] += 1;
+      draw(lines);
+      break;
+
+    case "r":
+      cursor = [0]
       draw(lines);
       break;
 
