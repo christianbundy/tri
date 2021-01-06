@@ -4,6 +4,7 @@
   "description": "???",
   "main": "index.js",
   "dependencies": {
+    "chalk": "^4.1.0",
     "espree": "^7.3.0"
   },
   "devDependencies": {},
